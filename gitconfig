@@ -9,3 +9,5 @@
 	diff = auto
 	interactive = auto
 	status = auto
+[include]
+	path = ~/.gitconfig_local
