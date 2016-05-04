@@ -7,6 +7,8 @@
 - link:
     ~/.gitconfig: gitconfig
     ~/.vimrc: vimrc
+    ~/.vim/colors/lanox.vim: vim/lanox-vim-theme/colors/lanox.vim
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  - [mkdir -p ~/.vim/colors, Creating a colors dir for vim]

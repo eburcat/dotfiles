@@ -1,3 +1,9 @@
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
+[submodule "lanox-vim-theme"]
+	path = vim/lanox-vim-theme
+	url = https://github.com/lanox/lanox-vim-theme
+[submodule "vim/lanox-vim-theme"]
+	path = vim/lanox-vim-theme
+	url = https://github.com/lanox/lanox-vim-theme
