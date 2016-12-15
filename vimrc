@@ -7,6 +7,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/CycleColor'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-unimpaired'
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 set shell=/bin/bash
@@ -31,3 +33,5 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['pylint']
+
+map <C-n> :NERDTreeToggle<CR>
