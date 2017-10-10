@@ -5,6 +5,7 @@
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit --format=format:'%C(yellow)%h%C(reset)%C(auto)%d%C(reset) %C(auto)%s%C(reset) %C(green)(%ar)%C(reset) %C(bold blue)<%an>%C(reset)'
 	lola = !git lol --all
 	lgc = !git lg | sed '$a\\' | grep '* ' | tac | cat -n | sed 's/^[ \t]*//' | sed 's/[\t]*[\\*]//' | tac | less -XR
+	d = difftool
 [color]
 	branch = auto
 	diff = auto
@@ -12,3 +13,7 @@
 	status = auto
 [include]
 	path = ~/.gitconfig_local
+#[diff]
+#	external = git_diff_wrapper
+#[pager]
+#	diff =
