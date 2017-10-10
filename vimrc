@@ -8,9 +8,13 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/CycleColor'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/syntastic'
-Plug 'pearofducks/ansible-vim'
+Plug 'chase/vim-ansible-yaml'
 Plug 'scrooloose/nerdtree'
 Plug 'wincent/command-t'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'benmills/vimux'
+Plug 'google/vim-searchindex'
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
 set shell=/bin/bash
@@ -36,10 +40,12 @@ set statusline+=%*
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
 let g:syntastic_python_checkers = ['pylint']
 
 let g:ansible_name_highlight = 1
+
+" au BufNewFile,BufRead *.yaml set filetype=yaml.ansible
 
 " check off a todo item and time stamp it
 map gd :r! date +" [\%H:\%M]"<ENTER>kJA<Esc>$
@@ -59,3 +65,24 @@ set foldlevelstart=20
 map <C-n> :NERDTreeToggle<CR>
 
 let g:CommandTFileScanner = 'watchman'
+
+set clipboard=unnamedplus
+" use leader to interact with the system clipboard
+nnoremap <Leader>p "*]p
+nnoremap <Leader>P "*]P
+
+nnoremap <s-tab> za
+
+nnoremap <Leader>y :y*<cr>
+nnoremap <Leader>c ^"*c$
+nnoremap <Leader>d ^"*d$
+
+vnoremap <Leader>y "*y
+vnoremap <Leader>c "*c
+vnoremap <Leader>d "*d
+
+map <Leader>vp :VimuxPromptCommand<CR>
+
+let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+
+autocmd Filetype java match Error /\s\+$/
